@@ -1,0 +1,14 @@
+## Enable or disable a feature should be set in variable.tf
+## Change or remove and type secure default password should be set in variable.tf
+## Show password in output should be set in output.tf with sensitive = false
+baseconfig: 
+  common:
+    mydomain: "localhost"
+    ingressip: "192.168.1.220"
+  kubernetes:
+    namespace: "eck-test"
+  keycloak:
+    keycloak_host: "keycloak"
+  eck:
+    elastic_host: "elastic"
+    kibana_host: "kibana"
