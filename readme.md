@@ -1,19 +1,5 @@
 # ELK (Elasticsearch, Kibana) Stack avec ECK et Keycloak
 
-![ELK Stack](https://www.elastic.co/guide/en/elastic-stack/current/images/stack-logo.png)
-
-## Table des matières
-
-1. [Introduction](#introduction)
-2. [Fonctionnalités](#fonctionnalités)
-3. [Prérequis](#prérequis)
-4. [Installation](#installation)
-5. [Configuration](#configuration)
-6. [Utilisation](#utilisation)
-7. [Contribuer](#contribuer)
-8. [Licence](#licence)
-9. [Remerciements](#remerciements)
-
 ## Introduction
 
 ELK est un acronyme pour Elasticsearch et Kibana, qui sont des projets open source. Ensemble, ils forment une solution puissante pour la recherche, l'analyse et la visualisation de journaux en temps réel. ECK (Elastic Cloud on Kubernetes) simplifie le déploiement de la stack ELK sur Kubernetes. Ce projet intègre également Keycloak pour l'authentification et l'autorisation.
@@ -46,3 +32,5 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur 
 ```bash
 git clone https://github.com/AnarchicSoul/elk.git
 cd elk
+# Edit config.yaml and variable.tf
+./install.sh
