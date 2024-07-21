@@ -1,0 +1,24 @@
+@startuml
+actor Client
+participant Nginx
+participant Kibana
+participant Keycloak
+participant Elasticsearch
+
+Client -> Nginx : Demande d'accès à Kibana
+Nginx -> Kibana : Redirection de la demande d'accès
+Kibana -> Nginx : Demande de redirection pour l'authentification OIDC
+Nginx -> Client : Redirection vers Keycloak pour l'authentification
+Client -> Keycloak : Demande d'authentification
+Keycloak -> Client : Page de connexion
+Client -> Keycloak : Informations d'identification
+Keycloak -> Client : Token OIDC et redirection vers Kibana
+Client -> Nginx : Demande d'accès à Kibana avec le token OIDC
+Nginx -> Kibana : Transfert de la demande d'accès avec le token OIDC
+Kibana -> Keycloak : Validation du token OIDC
+Keycloak -> Kibana : Réponse de validation du token
+Kibana -> Elasticsearch : Requête de données avec le token OIDC
+Elasticsearch -> Kibana : Réponse avec les données
+Kibana -> Nginx : Page Kibana avec données
+Nginx -> Client : Page Kibana avec données
+@enduml
